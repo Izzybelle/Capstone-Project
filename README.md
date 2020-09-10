@@ -6,7 +6,7 @@ This repository contains the documentation and code for my Capstone project on Y
 - Part 2: Feature Engineering and Modelling
 
 ## Context
-The dataset is a selection of Yelp's businesses, reviews and user data, spanning over 5 years (2013 - 2017). It was originally put together for the Yelp Dataset Challenge which is a chance for students to conduct research or analysis on Yelp's data and share their discoveries. In this dataset you'll find information about businesses across 11 metropolitan areas in 4 countries.
+The dataset is a selection of Yelp's businesses, reviews and user data, spanning over 5 years (2013 - 2017). It was originally put together for the Yelp Dataset Challenge which is a chance for students to conduct research or analysis on Yelp's data and share their discoveries. In this dataset you'll find information about businesses across 10 metropolitan areas in 4 countries.
 
 ## Content
 The dataset contains 5 json files: Business, Checkin, Review, Tip, User. 
