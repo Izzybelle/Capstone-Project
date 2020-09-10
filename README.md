@@ -1,9 +1,11 @@
 # General Assembly Capstone Project: NLP and Classification. 
 Predicting if a Yelp Business Review is useful or not.
 
-This repository contains the documentation and code for my Capstone project on Yelp business reviews. This is split into 2 parts: 
-- Part 1: Parse the data, EDA and Cleaning 
-- Part 2: Feature Engineering and Modelling
+This repository contains the documentation and code for my Capstone project on Yelp business reviews. This is split into 4 parts: 
+- Pitch and problem statement
+- Parse the data, EDA and Cleaning 
+- Feature Engineering and Modelling
+- Presentation on findings
 
 ## Context
 The dataset is a selection of Yelp's businesses, reviews and user data, spanning over 5 years (2013 - 2017). It was originally put together for the Yelp Dataset Challenge which is a chance for students to conduct research or analysis on Yelp's data and share their discoveries. In this dataset you'll find information about businesses across 10 metropolitan areas in 4 countries.
