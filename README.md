@@ -1,4 +1,4 @@
-# General Assembly Capstone Project: NLP and Classification. 
+# General Assembly Capstone Project: NLP and Binary Classification of Yelp business reviews
 Predicting if a Yelp Business Review is useful or not.
 
 This repository contains the documentation and code for my Capstone project on Yelp business reviews. This is split into 4 parts: 
@@ -7,23 +7,100 @@ This repository contains the documentation and code for my Capstone project on Y
 - Feature Engineering and Modelling
 - Presentation on findings
 
-## Context
+## Abstract
+The Capstone project was a 4-week final project for my General Assembly Immersive programme. The project involved using the Yelp dataset to classify whether a review was classed as useful or not based on it's content. I used a number of different natural languange processing (NLP) techniques including, count vectorizing, term-frequency - indirect document frequenct (TF-IDF), along with Logistic Regression (and other binary classification models). The result was a 62% accuracy score, which was a 7% increase on baseline. I used to ROC curve to evaluate the score.
+
+The code for the projcet can be found [here](https://github.com/Izzybelle/Projects)
+
+## Project Overview
+The project was undertaken as part of my study for the General Assembly Data Science Immersive. My aim for the project was two-fold. First, I wanted to gain experince following a typical data science workflow. Second, I wanted to practice using various tools and techniques to tackle a problem requiring natural language processing.
+
+## The Problem
+
+The yelp dataset contains business reviews where customers have left their feedback. The business reviews can be given a 1 - 5 star rating and the customer reviews of the business can be voted as as a useful, cool, and/ or funny, where the reviewer can rate the reviews as 1 or 0, in case of the project (1 for useful and 0 being the assumption for the review not being useful). I decided to look at the useful rating as this has not been done previously.
+
+### Context
 The dataset is a selection of Yelp's businesses, reviews and user data, spanning over 5 years (2013 - 2017). It was originally put together for the Yelp Dataset Challenge which is a chance for students to conduct research or analysis on Yelp's data and share their discoveries. In this dataset you'll find information about businesses across 10 metropolitan areas in 4 countries.
 
-## Content
-The dataset contains 5 json files: Business, Checkin, Review, Tip, User. 
+### Content
+The dataset contains 5 json files: Business, Checkin, Review, Tip, User.
 
 In total, there are:
 - 8,021,122 user reviews
-- Information on 209,393 businesses
-- The data spans 10 metropolitan areas
+- 209,393 businesses
+- 1,320,761 tips
+- 1,968,703 users
 
-## Inspiration
-Natural Language Processing and working with Big Data.
+### Business json
 
-What's in a review? What constitutes a useful review? Is it positive or negative? The Yelp reviews contain a lot of metadata that can be mined and used to infer meaning, business attibutes, and sentiment.
+Provides information about the businesses being review on Yelp.
 
-Another motivation to work on this dataset was to take an angle that has not been exploited and do some of my own unique analysis. 
+```javascript
+{
+    // string, 22 character unique string business id
+    "business_id": "tnhfDv5Il8EaGSXZGiuQGg",
+
+    // string, the business's name
+    "name": "Garaje",
+
+    // string, the full address of the business
+    "address": "475 3rd St",
+
+    // string, the city
+    "city": "San Francisco",
+
+    // string, 2 character state code, if applicable
+    "state": "CA",
+
+    // string, the postal code
+    "postal code": "94107",
+
+    // float, latitude
+    "latitude": 37.7817529521,
+
+    // float, longitude
+    "longitude": -122.39612197,
+
+    // float, star rating, rounded to half-stars
+    "stars": 4.5,
+
+    // integer, number of reviews
+    "review_count": 1198,
+
+    // integer, 0 or 1 for closed or open, respectively
+    "is_open": 1,
+
+    // object, business attributes to values. note: some attribute values might be objects
+    "attributes": {
+        "RestaurantsTakeOut": true,
+        "BusinessParking": {
+            "garage": false,
+            "street": true,
+            "validated": false,
+            "lot": false,
+            "valet": false
+        },
+    },
+
+    // an array of strings of business categories
+    "categories": [
+        "Mexican",
+        "Burgers",
+        "Gastropubs"
+    ],
+
+    // an object of key day to value hours, hours are using a 24hr clock
+    "hours": {
+        "Monday": "10:00-21:00",
+        "Tuesday": "10:00-21:00",
+        "Friday": "10:00-21:00",
+        "Wednesday": "10:00-21:00",
+        "Thursday": "10:00-21:00",
+        "Sunday": "11:00-18:00",
+        "Saturday": "10:00-21:00"
+    }
+}
+```
 
 ## The project layout
 
