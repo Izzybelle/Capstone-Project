@@ -262,8 +262,7 @@ Provides tips written by a user on a business. Tips are shorter reviews and conv
 > Define the problem statement, potential audience, goals, success metrics and data sources. Host a lightning talk presentation describing two of these proposals. The presentation for this is [here.](https://github.com/Izzybelle/Projects/blob/master/DSI%20Capstone%20Project%20Ideas%20-%20Izzy%20%20.pptx)
 
 ### Part 2a: Parse the data
-> Source and format the required data for you project, perform preliminary data munging and cleaning of your data. Describe you data keeping your                 > intended audience in mind. Document your work so far in Jupyter notebook. This includes parsing 2 larger files at 3.27 GB and 6.33 GB, splitting into equal
-> segments via terminal to enable Python to upload them in turn to a PostresSQL database. 
+> Source and format the required data for you project, perform preliminary data munging and cleaning of your data. Describe you data keeping your intended audience in mind. Document your work so far in Jupyter notebook. This includes parsing 2 larger files at 3.27 GB and 6.33 GB, splitting into equal segments via terminal to enable Python to upload them in turn to a PostresSQL database. 
 
 #### Parse the data
 Upon deciding finally to use the Yelp dataset for my Capstone, the initial challenge I encountered was the size of the data. Pandas in Python isn't able to process such such files. For those that were in the gigabytes I had to perform chunking, which splits the json files intro smaller chunks. Then I could iteratively load these smaller chunks into a Pandas dataframe and write to Postgres. The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb)
