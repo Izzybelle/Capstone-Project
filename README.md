@@ -287,7 +287,7 @@ Following this, I sampled the dataset and althoguh I did not conduct a hypothesi
 
 ### Part 3: Modelling
 > Detail your model and approach with concisely commented code, beginning with executive summary. Evaluate model performance and discuss results. Submit a 
-> complete notebook of the model. This include Feature Engineering with Count Vectorizer and TF-IDF and Classification models (Logistic Regression, Bernoulli NB, > Linear SVM and RBF SVM).
+> complete notebook of the model. This include Feature Engineering with Count Vectorizer and TF-IDF and Classification models (Logistic Regression, Bernoulli NB, Linear SVM and RBF SVM).
 
 #### Feature Engineering & Modelling
 To begin with the feature engineering, I used Count Vectorizer and TF-IDF Vectorizer which I optimised on and applied the best parameters to use in the grid searching hyperparameters for the Binary Classifiers. 
