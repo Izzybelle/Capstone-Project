@@ -259,14 +259,14 @@ Provides tips written by a user on a business. Tips are shorter reviews and conv
 ## The project layout
 
 ### Part 1: Pitch and Problem Statement 
-> Define the problem statement, potential audience, goals, success metrics and data sources. Host a lightning talk presentation describing two of these proposals.
+> Define the problem statement, potential audience, goals, success metrics and data sources. Host a lightning talk presentation describing two of these proposals. The presentation for this is [here.](https://github.com/Izzybelle/Projects/blob/master/DSI%20Capstone%20Project%20Ideas%20-%20Izzy%20%20.pptx)
 
 ### Part 2a: Parse the data
 > Source and format the required data for you project, perform preliminary data munging and cleaning of your data. Describe you data keeping your                 > intended audience in mind. Document your work so far in Jupyter notebook. This includes parsing 2 larger files at 3.27 GB and 6.33 GB, splitting into equal
 > segments via terminal to enable Python to upload them in turn to a PostresSQL database. 
 
 #### Parse the data
-Upon deciding finally to use the Yelp dataset for my Capstone, the initial challenge I encountered was the size of the data. Pandas in Python isn't able to process such such files. For those that were in the gigabytes I had to perform chunking, which splits the json files intro smaller chunks. Then I could iteratively load these smaller chunks into a Pandas dataframe and write to Postgres. The code for this is [here.]
+Upon deciding finally to use the Yelp dataset for my Capstone, the initial challenge I encountered was the size of the data. Pandas in Python isn't able to process such such files. For those that were in the gigabytes I had to perform chunking, which splits the json files intro smaller chunks. Then I could iteratively load these smaller chunks into a Pandas dataframe and write to Postgres. The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb)
  
 ### Part 2b: EDA and Preliminary Analysis
 > Quantitatively describe and visualise your data, maintain perspective on your goals and scope accordingly. This includes identifying foreign languages with
@@ -275,11 +275,11 @@ Upon deciding finally to use the Yelp dataset for my Capstone, the initial chall
 #### EDA and Cleaning
 This dataset contains some reviews in foreign languages but it isn't clear what the proportion is. For the purpose of my project, I wanted to focus on English language reviews since the data is of businesses in North America. 
 
-I used python package landetect to predict the language of business reviews, which identified that 99% of reviews are in English. The remaining 1%, of foreign languages were removed equating to ~ 79,000 reviews, leaving 7.9 millions reviews. The code for this is [here.]
+I used python package landetect to predict the language of business reviews, which identified that 99% of reviews are in English. The remaining 1%, of foreign languages were removed equating to ~ 79,000 reviews, leaving 7.9 millions reviews. The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb)
 
 With the remaining 7.9 millions rows, I found that useful votes were quite balanced, which meant I could take a sample of the dataset equally. 
 
-IMAGE
+[IMAGE](https://github.com/Izzybelle/Projects/blob/master/useful_votes.png)
 
 Following this, I sampled the dataset and althoguh I did not conduct a hypothesis test to find what was the ideal representative sample. I took a sample as much as my computer could handle of 100,000 observations. 50% were of useful reviews and 50% were of not voted useful reviews. The code for this is [here.]
 
@@ -287,14 +287,18 @@ Following this, I sampled the dataset and althoguh I did not conduct a hypothesi
 > Detail your model and approach with concisely commented code, beginning with executive summary. Evaluate model performance and discuss results. Submit a 
 > complete notebook of the model. This include Feature Engineering with Count Vectorizer and TF-IDF and Classification models (Logistic Regression, Bernoulli NB, > Linear SVM and RBF SVM).
 
-#### Feature engineering
+#### Feature Engineering & Modelling
 To begin with the feature engineering, I used Count Vectorizer and TF-IDF Vectorizer which I optimised on and applied the best parameters to use in the grid searching hyperparameters for the Binary Classifiers. 
 
 I used both Count Vectorizer and TF-IDF Vectorizer which both return a sparse matrix of features, however they work dfferently to each other. Count Vectorizer returns counts of each word. TF-IDF adds weight to the word depending how many appearances in the corpus it makes. So rarer words have more weight. It is possible to tune parameters and for both so I removed stopwords, added max features of 1000, min df of 20% and ngrams (1,1). With these parameters my basic Logistic Regression returned a result of 0.64 on Test Score and 0.629 on CV Score an improvement of 9% on the baseline. The ROC Curve used on Binary Classifers returned a score of 0.69. 
-. 
+
+The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%203%20-%20Modelling.ipynb)
+ 
 ### Part 4: Presentation
 > Host a short, well rehearsed presentation of your project for a non-technical audience. Cover goals, success criteria, data, approach, basic description of 
-> model, findings, risks/limitations, impact, next steps and conclusions. The presentation for this is found [here.]
+> model, findings, risks/limitations, impact, next steps and conclusions. The presentation for this is found [here.](https://github.com/Izzybelle/Projects/blob/master/Yelp%20reviews%20NLP%20and%20Classification.pptx)
+
+#### Final Word
 
 Although, the best result from the modelling was 9% above baseline. There is substantial room for improvement and the EDA and modelling was not exhaustative. Here are some of the findings I have made and ideas I have looked into futher progressing with the project. 
 
