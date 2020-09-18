@@ -279,7 +279,8 @@ I used python package landetect to predict the language of business reviews, whi
 
 With the remaining 7.9 millions rows, I found that useful votes were quite balanced, which meant I could take a sample of the dataset equally. 
 
-[IMAGE](https://github.com/Izzybelle/Projects/blob/master/useful_votes.png)
+Useful votes: 
+![alt text](https://github.com/Izzybelle/Projects/blob/master/useful_votes.png "Logo Title Text 1")
 
 Following this, I sampled the dataset and althoguh I did not conduct a hypothesis test to find what was the ideal representative sample. I took a sample as much as my computer could handle of 100,000 observations. 50% were of useful reviews and 50% were of not voted useful reviews. The code for this is [here.]
 
