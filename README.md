@@ -1,5 +1,5 @@
 # General Assembly Capstone Project: NLP and Binary Classification of Yelp business reviews
-Predicting if a Yelp Business Review is useful or not.
+Predicting if a Yelp Business Review is useful or not. What chracterizes a useful review?
 
 This repository contains the documentation and code for my Capstone project on Yelp business reviews. This is split into 4 parts: 
 - Pitch and problem statement
@@ -10,17 +10,16 @@ This repository contains the documentation and code for my Capstone project on Y
 ## Abstract
 The Capstone project was a 4-week final project for my General Assembly Immersive programme. The project involved using the Yelp dataset to classify whether a review was classed as useful or not based on it's content. I used a number of different natural languange processing (NLP) techniques including, count vectorizing, term-frequency - indirect document frequenct (TF-IDF), along with Logistic Regression (and other binary classification models). The result was a 62% accuracy score, which was a 7% increase on baseline. I used to ROC curve to evaluate the score.
 
-The code for the projcet can be found [here](https://github.com/Izzybelle/Projects)
+The code for the projcet can be found here: [Part 2a & b - EDA](https://github.com/Izzybelle/Capstone-Project/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb) [Part 3 - Modelling](https://github.com/Izzybelle/Capstone-Project/blob/master/Capstone%20-%20Yelp%20-%20Part%203%20-%20Modelling.ipynb)
 
 ## Project Overview
 The project was undertaken as part of my study for the General Assembly Data Science Immersive. My aim for the project was two-fold. First, I wanted to gain experince following a typical data science workflow. Second, I wanted to practice using various tools and techniques to tackle a problem requiring natural language processing.
 
 ## The Problem
-
-The yelp dataset contains business reviews where customers have left their feedback. The business reviews can be given a 1 - 5 star rating and the customer reviews of the business can be voted as as a useful, cool, and/ or funny, where the reviewer can rate the reviews as 1 or 0, in case of the project (1 for useful and 0 being the assumption for the review not being useful). I decided to look at the useful rating as this has not been done previously.
+The Yelp Dataset contains business reviews from customers who have left their feedback. The business reviews can be given a 1 - 5 star rating and the customer reviews of the business can be voted by others as useful, cool, and/ or funny. The rating of the review is a 1 or 0, 1 for useful and 0 being the assumption that the review is not useful. I decided to look at the useful rating as this has not been done previously.
 
 ### Context
-The dataset is a selection of Yelp's businesses, reviews and user data, spanning over 5 years (2013 - 2017). It was originally put together for the Yelp Dataset Challenge which is a chance for students to conduct research or analysis on Yelp's data and share their discoveries. In this dataset you'll find information about businesses across 10 metropolitan areas in 4 countries.
+The dataset is a selection of Yelp's businesses, reviews and user data, spanning over 5 years (2013 - 2017). It was originally put together for the Yelp Dataset Challenge a publically available dataset, which is a chance for students to conduct research or analysis on Yelp's data and share their discoveries. In this dataset you'll find information about businesses across 10 metropolitan areas in 4 countries.
 
 ### Content
 The dataset contains 5 json files: Business, Checkin, Review, Tip, User.
@@ -259,30 +258,28 @@ Provides tips written by a user on a business. Tips are shorter reviews and conv
 ## The project layout
 
 ### Part 1: Pitch and Problem Statement 
-> Define the problem statement, potential audience, goals, success metrics and data sources. Host a lightning talk presentation describing two of these proposals. The presentation for this is [here.](https://github.com/Izzybelle/Projects/blob/master/DSI%20Capstone%20Project%20Ideas%20-%20Izzy%20%20.pptx)
+> Define the problem statement, potential audience, goals, success metrics and data sources. Host a lightning talk presentation describing two of these proposals. The presentation for this is [here.](https://docs.google.com/presentation/d/1DdK5IffWKxk05gCQQ703wcEMzuKLIz9f-KdcksXILsA/edit?usp=sharing)
 
 ### Part 2a: Parse the data
 > Source and format the required data for you project, perform preliminary data munging and cleaning of your data. Describe you data keeping your intended audience in mind. Document your work so far in Jupyter notebook. This includes parsing 2 larger files at 3.27 GB and 6.33 GB, splitting into equal segments via terminal to enable Python to upload them in turn to a PostresSQL database. 
-
 #### Parse the data
 Upon deciding finally to use the Yelp dataset for my Capstone, the initial challenge I encountered was the size of the data. Pandas in Python isn't able to process such such files. For those that were in the gigabytes I had to perform chunking, which splits the json files intro smaller chunks. Then I could iteratively load these smaller chunks into a Pandas dataframe and write to Postgres. The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb)
  
 ### Part 2b: EDA and Preliminary Analysis
 > Quantitatively describe and visualise your data, maintain perspective on your goals and scope accordingly. This includes identifying foreign languages with
 > Python package Lang Detect (and removing those) and sampling 100k observations out of 7.9 million rows.
-
-#### EDA and Cleaning
+#### EDA
 This dataset contains some reviews in foreign languages but it isn't clear what the proportion is. For the purpose of my project, I wanted to focus on English language reviews since the data is of businesses in North America. 
 
-I used python package landetect to predict the language of business reviews, which identified that 99% of reviews are in English. The remaining 1%, of foreign languages were removed equating to ~ 79,000 reviews, leaving 7.9 millions reviews. The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb)
+I used python package LangDetect to identify that 99% of reviews are in English. The remaining 1% of foreign languages were removed equating to ~ 79,000 reviews, with 7.9 millions reviews remaining. The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb)
 
-With the remaining 7.9 millions rows, I found that useful votes were quite balanced, which meant I could take a sample of the dataset equally. 
+With the remaining rows, the dataset was fairly balance (45/55), useful and not useful, respectively, which meant I could take a sample of the dataset equally. 
 
-Useful votes: 
+Proportion of votes: 
 
 ![alt text](https://github.com/Izzybelle/Projects/blob/master/useful_votes.png "Logo Title Text 1")
 
-Following this, I sampled the dataset and althoguh I did not conduct a hypothesis test to find what was the ideal representative sample. I took a sample as much as my computer could handle of 100,000 observations. 50% were of useful reviews and 50% were of not voted useful reviews. The code for this is [here.]
+Following this, I sampled the dataset and althoguh I did not conduct a hypothesis test to find what was the ideal representative sample. I took a sample as much as my computer could handle of the 100,000 observations. 50% were of useful reviews and 50% were of not useful reviews. The code for this is [here.]
 
 ### Part 3: Modelling
 > Detail your model and approach with concisely commented code, beginning with executive summary. Evaluate model performance and discuss results. Submit a 
@@ -310,5 +307,12 @@ Secondly, all the classifcation models had a difficult time correctly classifyin
 Thirdly, there were far too many features for the model to classify correctly, for further featuve engineering, I would focus on a particular business or sector. As the variety of terms used were against a variety of business and some a specific to a specific industry, so isn't a good measure of usefulness in a review.
 
 Finally, I would check the length of reviews and remove those that are shorter reviews as they would not add value to the model in train and therefore wouldn't work particularly well in test.
+
+## Key Learnings
+In all the project went fairly well, I received a result that was 9% above baseline. There is still room for improvement on the model and I have identified methods to do this in my final word. Some key takings are:
+
+- As part of the Data Science EDA, it is important to conduct sufficient EDA that allows to focus on a business as the business reviews will be specific for that business and won't include noise from other businesses. This can then be vizualized in a way that the audience can understand the process.
+- It is important to continue developing and learning about the tools available to NLP that will aid with modelling, such as POS tagging, Stemming and/ or Lemmatization.
+- Getting comfortable with AWS and working with big data is key taking.
 
 N.B. I used some of these techniques at the end of the project to test the techniques but was not able to implement them in full. I will be attempting a new project where I can better implement these.
