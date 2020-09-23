@@ -275,11 +275,15 @@ I used python package LangDetect to identify that 99% of reviews are in English.
 
 With the remaining rows, the dataset was fairly balance (45/55), useful and not useful, respectively, which meant I could take a sample of the dataset equally. 
 
+Countplot categorical features:
+
+![alt text](https://github.com/Izzybelle/Capstone-Project/blob/master/Countplot%20of%20categroical%20features.png "Logo Title Text 2")
+
 Proportion of votes: 
 
 ![alt text](https://github.com/Izzybelle/Projects/blob/master/useful_votes.png "Logo Title Text 1")
 
-Following this, I sampled the dataset and althoguh I did not conduct a hypothesis test to find what was the ideal representative sample. I took a sample as much as my computer could handle of the 100,000 observations. 50% were of useful reviews and 50% were of not useful reviews. The code for this is [here.]
+Following this, I sampled the dataset and although I did not conduct a hypothesis test to find what is the ideal representative sample. I took a sample as much as my computer could handle of the 100,000 observations. 50% were of useful reviews and 50% were of not useful reviews. The code for this is [here.]
 
 ### Part 3: Modelling
 > Detail your model and approach with concisely commented code, beginning with executive summary. Evaluate model performance and discuss results. Submit a 
