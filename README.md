@@ -10,7 +10,7 @@ This repository contains the documentation and code for my Capstone project on Y
 ## Abstract
 The Capstone project was a 4-week final project for my General Assembly Immersive programme. The project involved using the Yelp dataset to classify whether a review was classed as useful or not based on it's content. I used a number of different natural languange processing (NLP) techniques including, count vectorizing, term-frequency - indirect document frequenct (TF-IDF), along with Logistic Regression (and other binary classification models). The result was a 62% accuracy score, which was a 7% increase on baseline. I used to ROC curve to evaluate the score.
 
-The code for the projcet can be found here: [Part 2a & b - EDA](https://github.com/Izzybelle/Capstone-Project/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb) [Part 3 - Modelling](https://github.com/Izzybelle/Capstone-Project/blob/master/Capstone%20-%20Yelp%20-%20Part%203%20-%20Modelling.ipynb)
+The code for the projcet can be found here: [Part 2a & b - EDA](https://github.com/Izzybelle/Capstone-Project/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb) | [Part 3 - Modelling](https://github.com/Izzybelle/Capstone-Project/blob/master/Capstone%20-%20Yelp%20-%20Part%203%20-%20Modelling.ipynb)
 
 ## Project Overview
 The project was undertaken as part of my study for the General Assembly Data Science Immersive. My aim for the project was two-fold. First, I wanted to gain experince following a typical data science workflow. Second, I wanted to practice using various tools and techniques to tackle a problem requiring natural language processing.
