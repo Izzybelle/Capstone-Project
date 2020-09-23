@@ -275,7 +275,7 @@ I used python package LangDetect to identify that 99% of reviews are in English.
 
 With the remaining rows, the dataset was fairly balance (45/55), useful and not useful, respectively, which meant I could take a sample of the dataset equally. 
 
-Countplot of the categorical features:
+##### Countplot of the categorical features:
 
 ![alt text](https://github.com/Izzybelle/Capstone-Project/blob/master/Countplot%20of%20categroical%20features.png "Logo Title Text 2")
 
@@ -285,11 +285,19 @@ Briefly reviewing the other chart, for stars we can see that reviewers have posi
 
 The other ratings of cool and funny have a skew in the distribution. I decided that it will be difficult to gauge context and therefore it would be diffuclt to predict whether a review is cool or funny.
 
-Proportion of votes: 
+##### Scatter plot of correlations:
+
+![alt text](https://github.com/Izzybelle/Capstone-Project/blob/master/Scatter%20plot%20of%20correlations.png)
+
+There are no strong correlation between variables. It is not immediately noticeable from the scatter matrix and since useful votes are either 0 or 1. so anything greater than 1, doesn't make it more useful than something with just 1 vote of being useful. It will be helpful to make the useful column binary and plot this again. 
+
+##### Proportion of votes: 
 
 ![alt text](https://github.com/Izzybelle/Projects/blob/master/useful_votes.png "Logo Title Text 1")
 
-Reviews by city:
+This is mostly balanced dataset 45% and 55%, for useful and not useful reviews, respectively. 
+
+##### Reviews by city:
 
 ![alt text](https://github.com/Izzybelle/Capstone-Project/blob/master/Reviews%20by%20city.png "Logo Title Text 3")
 
