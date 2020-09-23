@@ -275,13 +275,25 @@ I used python package LangDetect to identify that 99% of reviews are in English.
 
 With the remaining rows, the dataset was fairly balance (45/55), useful and not useful, respectively, which meant I could take a sample of the dataset equally. 
 
-Countplot categorical features:
+Countplot of the categorical features:
 
 ![alt text](https://github.com/Izzybelle/Capstone-Project/blob/master/Countplot%20of%20categroical%20features.png "Logo Title Text 2")
+
+This chart shows that there is a skew amoung the distribution of the features. At a glance of the useful rated reviews, the majority are not marked as review  useful but there is still a substantial that do vote that a review is useful. Every review with a useful rating above 0, I will assume that these are useful, no matter how many times it was voted on. Making this a Binary Classification.
+
+Briefly reviewing the other chart, for stars we can see that reviewers have positive bias and are more likely to give a rating of 5 star. 
+
+The other ratings of cool and funny have a skew in the distribution. I decided that it will be difficult to gauge context and therefore it would be diffuclt to predict whether a review is cool or funny.
 
 Proportion of votes: 
 
 ![alt text](https://github.com/Izzybelle/Projects/blob/master/useful_votes.png "Logo Title Text 1")
+
+Reviews by city:
+
+![alt text](https://github.com/Izzybelle/Capstone-Project/blob/master/Reviews%20by%20city.png "Logo Title Text 3")
+
+The majority of business reviews are for business in Las Vegas. This could be a place to focus.
 
 Following this, I sampled the dataset and although I did not conduct a hypothesis test to find what is the ideal representative sample. I took a sample as much as my computer could handle of the 100,000 observations. 50% were of useful reviews and 50% were of not useful reviews. The code for this is [here.]
 
