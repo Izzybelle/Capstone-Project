@@ -258,7 +258,7 @@ Provides tips written by a user on a business. Tips are shorter reviews and conv
 ## The project layout
 
 ### Part 1: Pitch and Problem Statement 
-> Define the problem statement, potential audience, goals, success metrics and data sources. Host a lightning talk presentation describing two of these proposals. The presentation for this is [here.](https://docs.google.com/presentation/d/1DdK5IffWKxk05gCQQ703wcEMzuKLIz9f-KdcksXILsA/edit?usp=sharing)
+> Define the problem statement, potential audience, goals, success metrics and data sources. Host a lightning talk presentation describing two of these proposals. 
 
 ### Part 2a: Parse the data
 > Source and format the required data for you project, perform preliminary data munging and cleaning of your data. Describe you data keeping your intended audience in mind. Document your work so far in Jupyter notebook. This includes parsing 2 larger files at 3.27 GB and 6.33 GB, splitting into equal segments via terminal to enable Python to upload them in turn to a PostresSQL database. 
@@ -318,7 +318,7 @@ The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/C
  
 ### Part 4: Presentation
 > Host a short, well rehearsed presentation of your project for a non-technical audience. Cover goals, success criteria, data, approach, basic description of 
-> model, findings, risks/limitations, impact, next steps and conclusions. The presentation for this is found [here.](https://github.com/Izzybelle/Projects/blob/master/Yelp%20reviews%20NLP%20and%20Classification.pptx)
+> model, findings, risks/limitations, impact, next steps and conclusions. 
 
 #### Final Word
 
