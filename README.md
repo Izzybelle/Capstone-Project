@@ -322,18 +322,18 @@ The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/C
 
 #### Final Word
 
-Although, the best result from the modelling was 9% above baseline. There is substantial room for improvement and the EDA and modelling was not exhaustative. Here are some of the findings I have made and ideas I have looked into to develop the project. 
+Although, the best result from the modelling was 13% above baseline. There is still a lot of room for improvement and the EDA and modelling was not exhaustative. Here are some of the findings I have made and ideas I have looked into to further develop this project. 
 
-Firstly, the 100k sample I chose may not be representative of the 7.9 million reviews. I would need to calculate sample size for a confidence interval of 95% or 99%. If I was to use all the data, then to overcome the vast amount of data I would have to implement a big data solutions such as using Hashing Vectorizer or move to AWS to model the larger data.
+Firstly, the 100k sample I used may not be representative of the 7.9 million reviews. I would need to calculate sample size for a confidence interval of 95% or 99%. If I was to use all the data, then I would need to implement a big data solutions such as using Hashing Vectorizer (it is very low memory scalable to large datasets as there is no need to store a vocabulary dictionary in memory) the other is to move to AWS to model the larger data.
 
-Secondly, all the classifcation models had a difficult time correctly classifying observations and made a large amount of False Positives errors. To improve on the training, I would need to further implement feature engineering, by using POS tagging to further distinguish the kind of words and grammer used. Stemming is the process of reducing a word to its word stem and it is less strict than Lemmatization. So for the process of improving the False Positive rate, Lemmatization would offer better Precision than Stemming, but at the expense of Recall.
+Secondly, all the classifcation models had a difficult time correctly classifying observations and made a large amount of False Positives errors. To improve on the training, I would need to further implement feature engineering, by using POS tagging to distinguish between the kind of words and grammer used. Stemming is the process of reducing a word to its word stem and it is less strict than Lemmatization. So for the process of improving the False Positive rate, Lemmatization would offer better Precision than Stemming, but at the expense of Recall.
 
 Thirdly, there were far too many features for the model to classify correctly, and a lot of the corpus have unique words dintinguishable to a particular business, thereby increasing the amount of features and making it more difficult for the model to predict. For further Feature Engineering, I would focus on a particular business and provide analysis on it. 
 
-Finally, I would check the length of reviews and remove those that are shorter reviews, as they would not add value to the model in training and therefore wouldn't work particularly well in test.
+Finally, I would check the length of reviews and remove those that are shorter reviews, as they do not add value to the model in training and therefore wouldn't work well with the test data.
 
 ## Key Learnings
-In all, the project went fairly well. I received a result that was 9% above baseline, however, there is still room for improvement on training the model and I have identified methods to do this in my final word. Some key takings are:
+In all, the project went fairly well. I received a result that was 13% above baseline, however, there is still room for improvement on training the model and I have identified methods to do this in my final word. Some key takings are:
 
 - As part of the Data Science EDA, it is important to conduct sufficient EDA that allows to focus on a particular business as this will remove noise created by other business. This can also be vizualized in a way that the audience can understand and follow the process.
 - It is important to continue developing and learning about the tools available in NLP that will aid with modelling, such as POS tagging, Stemming and/ or Lemmatization.
