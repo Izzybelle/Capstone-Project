@@ -8,7 +8,7 @@ This repository contains the documentation and code for my Capstone project on Y
 - Presentation on findings
 
 ## Abstract
-The Capstone project was a 4-week final project for my General Assembly Immersive programme. The project involved using the Yelp dataset to classify whether a review was classed as useful or not based on it's content. I used a number of different natural languange processing (NLP) techniques including, count vectorizing, term-frequency - indirect document frequenct (TF-IDF), along with Logistic Regression (and other binary classification models). The result was a 62% accuracy score, which was a 7% increase on baseline. I used to ROC curve to evaluate the score.
+The Capstone project was a 4-week final project for my General Assembly Immersive programme. The project involved using the Yelp dataset to classify whether a review was classed as useful or not based on its content. I used a number of different natural languange processing (NLP) techniques including, count vectorizing, term-frequency indirect document frequency (TF-IDF), along with Logistic Regression (and other binary classification model). The result was a 62% accuracy score, which was a 7% increase on baseline. I used to ROC curve to evaluate the score.
 
 The code for the projcet can be found here: [Part 2a & b - EDA](https://github.com/Izzybelle/Capstone-Project/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb) | [Part 3 - Modelling](https://github.com/Izzybelle/Capstone-Project/blob/master/Capstone%20-%20Yelp%20-%20Part%203%20-%20Modelling.ipynb)
 
@@ -22,7 +22,7 @@ The Yelp Dataset contains business reviews from customers who have left their fe
 The dataset is a selection of Yelp's businesses, reviews and user data, spanning over 5 years (2013 - 2017). It was originally put together for the Yelp Dataset Challenge a publically available dataset, which is a chance for students to conduct research or analysis on Yelp's data and share their discoveries. In this dataset you'll find information about businesses across 10 metropolitan areas in 4 countries.
 
 ### Content
-The dataset contains 5 json files: Business, Checkin, Review, Tip, User.
+The dataset contains 5 JSON files: Business, Checkin, Review, Tip, User.
 
 In total, there are:
 - 8,021,122 user reviews
@@ -30,7 +30,7 @@ In total, there are:
 - 1,320,761 tips
 - 1,968,703 users
 
-### Business json
+### Business JSON
 
 Provides information about the businesses being review on Yelp.
 
@@ -101,7 +101,7 @@ Provides information about the businesses being review on Yelp.
 }
 ```
 
-### Review.json
+### Review JSON
 
 Provides user_id review for business_id , as well as star rating, and number of votes received for useful, funny or cool  user review. 
 
@@ -137,7 +137,7 @@ Provides user_id review for business_id , as well as star rating, and number of 
 }
 ```
 
-### User.json
+### User JSON
 
 Provides the user_id metadata associated with the user.
 
@@ -218,7 +218,7 @@ Provides the user_id metadata associated with the user.
 }
 ```
 
-### Checkin.json
+### Checkin JSON
 
 Provides the timestamps for checkin data on a business.
 
@@ -232,7 +232,7 @@ Provides the timestamps for checkin data on a business.
 }
 ```
 
-### Tips.json
+### Tips JSON
 
 Provides tips written by a user on a business. Tips are shorter reviews and convey quick suggestions.
 
@@ -255,7 +255,7 @@ Provides tips written by a user on a business. Tips are shorter reviews and conv
 }
 ```
 
-## The project layout
+## The Project Layout
 
 ### Part 1: Pitch and Problem Statement 
 > Define the problem statement, potential audience, goals, success metrics and data sources. Host a lightning talk presentation describing two of these proposals. 
@@ -263,13 +263,13 @@ Provides tips written by a user on a business. Tips are shorter reviews and conv
 ### Part 2a: Parse the data
 > Source and format the required data for you project, perform preliminary data munging and cleaning of your data. Describe you data keeping your intended audience in mind. Document your work so far in Jupyter notebook. This includes parsing 2 larger files at 3.27 GB and 6.33 GB, splitting into equal segments via terminal to enable Python to upload them in turn to a PostresSQL database. 
 #### Parse the data
-Upon deciding finally to use the Yelp dataset for my Capstone, the initial challenge I encountered was the size of the data. Pandas in Python isn't able to process such such files. For those that were in the gigabytes I had to perform chunking, which splits the json files intro smaller chunks. Then I could iteratively load these smaller chunks into a Pandas dataframe and write to Postgres. The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb)
+Upon deciding finally to use the Yelp dataset for my Capstone, the initial challenge I encountered was the size of the data. Pandas in Python isn't able to process such such files. For those that were in the gigabytes, I had to perform chunking, which splits the json files intro smaller chunks. Then I could iteratively load these smaller chunks into a Pandas dataframe and write to Postgres. The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb)
  
 ### Part 2b: EDA and Preliminary Analysis
 > Quantitatively describe and visualise your data, maintain perspective on your goals and scope accordingly. This includes identifying foreign languages with
 > Python package Lang Detect (and removing those) and sampling 100k observations out of 7.9 million rows.
 #### EDA
-This dataset contains some reviews in foreign languages but it isn't clear what the proportion is. For the purpose of my project, I wanted to focus on English language reviews since the data is of businesses in North America. 
+This dataset contains some reviews in foreign languages but it isn't clear what the proportion is. For the purpose of my project, I wanted to focus on English language reviews since the data belongs to businesses in North America. 
 
 I used python package LangDetect to identify that 99% of reviews are in English. The remaining 1% of foreign languages were removed equating to ~ 79,000 reviews, with 7.9 millions reviews remaining. The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%202a%20%26%20b%20-%20Parse%20the%20data%2C%20EDA%20and%20Cleaning.ipynb)
 
@@ -279,7 +279,7 @@ With the remaining rows, the dataset was fairly balance (45/55), useful and not 
 
 ![alt text](https://github.com/Izzybelle/Capstone-Project/blob/master/Countplot%20of%20categroical%20features.png "Logo Title Text 2")
 
-This chart shows that there is a skew amoung the distribution of the features. At a glance of the useful rated reviews, the majority are not marked as review  useful but there is still a substantial that do vote that a review is useful. Every review with a useful rating above 0, I will assume that these are useful, no matter how many times it was voted on. Making this a Binary Classification.
+This chart shows that there is a skew amoung the distribution of the features. At a glance of the useful rated reviews, 55% are marked as not useful and 45% of reviews are voted as useful. Every review with a useful rating above 0, I will assume that these are useful, no matter how many times it was voted on. Making this a Binary Classification.
 
 Briefly reviewing the other chart, for stars we can see that reviewers have positive bias and are more likely to give a rating of 5 star. 
 
@@ -289,7 +289,7 @@ The other ratings of cool and funny have a skew in the distribution. I decided t
 
 ![alt text](https://github.com/Izzybelle/Capstone-Project/blob/master/Scatter%20plot%20of%20correlations.png)
 
-There are no strong correlation between variables. It is not immediately noticeable from the scatter matrix and since useful votes are either 0 or 1. so anything greater than 1, doesn't make it more useful than something with just 1 vote of being useful. It will be helpful to make the useful column binary and plot this again. 
+There are no strong correlatios between variables and it is not immediately noticeable from the scatter matrix. I belive there is an issue with the scatter matrix I should instead be distiguishing between 1 and 0 (useful and not useful), indtead this chart does not making it difficult to interpret. It will be helpful to make the useful column binary and plot this again. 
 
 ##### Proportion of votes: 
 
@@ -310,9 +310,9 @@ Following this, I sampled the dataset and although I did not conduct a hypothesi
 > complete notebook of the model. This include Feature Engineering with Count Vectorizer and TF-IDF and Classification models (Logistic Regression, Bernoulli NB, Linear SVM and RBF SVM).
 
 #### Feature Engineering & Modelling
-To begin with the feature engineering, I used Count Vectorizer and TF-IDF Vectorizer which I optimised on and applied the best parameters to use in the grid searching hyperparameters for the Binary Classifiers. 
+To begin with the feature engineering, I used Count Vectorizer and TF-IDF Vectorizer, which I optimised on, and applied the best parameters to use in the grid searching hyperparameters for the Binary Classifiers. 
 
-I used both Count Vectorizer and TF-IDF Vectorizer which both return a sparse matrix of features, however they work dfferently to each other. Count Vectorizer returns counts of each word. TF-IDF adds weight to the word depending how many appearances in the corpus it makes. So rarer words have more weight. It is possible to tune parameters and for both so I removed stopwords, added max features of 1000, min df of 20% and ngrams (1,1). With these parameters my basic Logistic Regression returned a result of 0.64 on Test Score and 0.629 on CV Score an improvement of 9% on the baseline. The ROC Curve used on Binary Classifers returned a score of 0.69. 
+I used both Count Vectorizer and TF-IDF Vectorizer which both return a sparse matrix of features, however, they work dfferently to each other. Count Vectorizer returns counts of each word. TF-IDF adds weight to the word depending how many appearances in the corpus it makes. So rarer words have more weight. It is possible to tune parameters and for both so I removed stopwords, added max features of 1000, min df of 20% and ngrams (1,1). With these parameters my basic Logistic Regression returned a result of 0.64 on Test Score and 0.629 on CV Score an improvement of 9% on the baseline. The ROC Curve used on Binary Classifers returned a score of 0.69. 
 
 The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/Capstone%20-%20Yelp%20-%20Part%203%20-%20Modelling.ipynb)
  
@@ -322,21 +322,21 @@ The code for this is [here.](https://github.com/Izzybelle/Projects/blob/master/C
 
 #### Final Word
 
-Although, the best result from the modelling was 9% above baseline. There is substantial room for improvement and the EDA and modelling was not exhaustative. Here are some of the findings I have made and ideas I have looked into futher progressing with the project. 
+Although, the best result from the modelling was 9% above baseline. There is substantial room for improvement and the EDA and modelling was not exhaustative. Here are some of the findings I have made and ideas I have looked into to develop the project. 
 
-Firstly, the 100k sample I chose may not be representative of the 7.9 million reviews. I would need to calculate sample size for a confidence interval of 95% or 99%. If I was to use all the data then to overcome the breadth of the sheer amount of data I would have to implement big data solutions such as using Hashing Vectorizer or move to AWS to model the larger data.
+Firstly, the 100k sample I chose may not be representative of the 7.9 million reviews. I would need to calculate sample size for a confidence interval of 95% or 99%. If I was to use all the data, then to overcome the vast amount of data I would have to implement a big data solutions such as using Hashing Vectorizer or move to AWS to model the larger data.
 
-Secondly, all the classifcation models had a difficult time correctly classifying observations and made a large amount of False Positives errors. To improve on the training, I would need to further implement feature engineering, by using POS tagging to further distinguish the kind of words and grammer used. Stemming is the process of reducing a word to it word stem it is less strict than Lemmatization so for the process of improving the False Positive rate, Lemmatization would offer better precision than stemming, but at the expense of recall.
+Secondly, all the classifcation models had a difficult time correctly classifying observations and made a large amount of False Positives errors. To improve on the training, I would need to further implement feature engineering, by using POS tagging to further distinguish the kind of words and grammer used. Stemming is the process of reducing a word to its word stem and it is less strict than Lemmatization. So for the process of improving the False Positive rate, Lemmatization would offer better Precision than Stemming, but at the expense of Recall.
 
-Thirdly, there were far too many features for the model to classify correctly, for further featuve engineering, I would focus on a particular business or sector. As the variety of terms used were against a variety of business and some a specific to a specific industry, so isn't a good measure of usefulness in a review.
+Thirdly, there were far too many features for the model to classify correctly, and a lot of the corpus have unique words dintinguishable to a particular business, thereby increasing the amount of features and making it more difficult for the model to predict. For further Feature Engineering, I would focus on a particular business and provide analysis on it. 
 
-Finally, I would check the length of reviews and remove those that are shorter reviews as they would not add value to the model in train and therefore wouldn't work particularly well in test.
+Finally, I would check the length of reviews and remove those that are shorter reviews, as they would not add value to the model in training and therefore wouldn't work particularly well in test.
 
 ## Key Learnings
-In all the project went fairly well, I received a result that was 9% above baseline. There is still room for improvement on the model and I have identified methods to do this in my final word. Some key takings are:
+In all, the project went fairly well. I received a result that was 9% above baseline, however, there is still room for improvement on training the model and I have identified methods to do this in my final word. Some key takings are:
 
-- As part of the Data Science EDA, it is important to conduct sufficient EDA that allows to focus on a business as the business reviews will be specific for that business and won't include noise from other businesses. This can then be vizualized in a way that the audience can understand the process.
-- It is important to continue developing and learning about the tools available to NLP that will aid with modelling, such as POS tagging, Stemming and/ or Lemmatization.
-- Getting comfortable with AWS and working with big data is key taking.
+- As part of the Data Science EDA, it is important to conduct sufficient EDA that allows to focus on a particular business as this will remove noise created by other business. This can also be vizualized in a way that the audience can understand and follow the process.
+- It is important to continue developing and learning about the tools available in NLP that will aid with modelling, such as POS tagging, Stemming and/ or Lemmatization.
+- Getting comfortable with AWS and working with big data is another key taking.
 
-N.B. I used some of these techniques at the end of the project to test the techniques but was not able to implement them in full. I will be attempting a new project where I can better implement these.
+N.B. I used some of these techniques at the end of the project to test the techniques but was not able to implement them in full. I will be attempting a new project where I can implement these.
